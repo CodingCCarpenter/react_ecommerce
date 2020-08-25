@@ -1,5 +1,6 @@
 import React from 'react';
 
+// STYLE IMPORT
 import './homepage.styles.scss';
 
 const HomePage = () => (
