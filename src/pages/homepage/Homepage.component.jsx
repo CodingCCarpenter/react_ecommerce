@@ -4,13 +4,11 @@ import React from 'react';
 import './homepage.styles.scss';
 
 // IMPORT COMPONENTS
-import MenuItem from '../../components/menu-item/menu-item.component';
+import Directory from '../../components/directory/directory.component'
 
 const HomePage = () => (
     <div className='homepage'>
-        <div className='directory-menu'>
-            <MenuItem />
-        </div>
+        < Directory />
         
     </div>
 )
