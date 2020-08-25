@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies used
+[] Github
+[] Bash Terminal
+[] HTML
+[] npm 
+[] Sass
 
 ## Available Scripts
 
