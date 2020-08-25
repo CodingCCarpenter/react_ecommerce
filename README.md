@@ -4,6 +4,8 @@
 [] HTML
 [] npm 
 [] Sass
+[] Google Fonts
+
 
 ## Available Scripts
 
