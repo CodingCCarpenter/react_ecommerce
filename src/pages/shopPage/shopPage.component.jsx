@@ -3,7 +3,7 @@ import React from 'react';
 // DATA IMPORT
 import SHOP_DATA from './shop.data.js'
 
-class shopPage extends React.Component {
+class ShopPage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -21,4 +21,4 @@ class shopPage extends React.Component {
     }
 }
 
-export default shopPage;
+export default ShopPage;
