@@ -1,12 +1,23 @@
 import React from 'react';
 
+// DATA IMPORT
+import SHOP_DATA from './shop.data.js'
+
 class shopPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            
+            collections: SHOP_DATA
         } 
+    }
+
+    render() {
+        return(
+            <div>
+                SHOP PAGE
+            </div>
+        )
     }
 }
 
