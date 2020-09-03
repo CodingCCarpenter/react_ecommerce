@@ -5,11 +5,27 @@ import { Link } from 'react-router-dom';
 // STYLE IMPORT
 import './header.styles.scss';
 
+// ASSET IMPORT
+import { ReactComponent as Logo } from '../../assets/crown.svg';
+
 const Header = () => (
     <div className='header'>
-        <Link to='../../assets/crown.svg'>
 
+        <Link className='logo-container' to='/'>
+            <Logo className='logo'/>
         </Link>
+
+        <div className='options'>
+
+            <Link className='option' to='/shop'>
+                SHOP
+            </Link>
+
+            <Link className='option' to='/contact'>
+                CONTACT
+            </Link>
+            
+        </div>
     </div>
 );
 
