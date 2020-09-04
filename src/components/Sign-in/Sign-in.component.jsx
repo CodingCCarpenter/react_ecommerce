@@ -1,10 +1,14 @@
+// REACT IMPORT
 import React from 'react';
 
+// STYLES IMPORT
 import './sign-in.styles.scss';
 
+// COMPONENT IMPORTS
 import FormInput from '../form-input/Form-input.component';
 import CustomButton from '../custom-button/Custom-button.component';
 
+// IMPORT GOOGLE AUTHENTICATION FROM FIREBASE.UTILS
 import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 class SignIn extends React.Component{
@@ -54,6 +58,11 @@ class SignIn extends React.Component{
                         required />
 
                     <CustomButton type='submit' > Sign in </CustomButton>
+                    {/*Adds button that triggers our signInWithGoogle pop up window */}
+                    <CustomButton  onClick={signInWithGoogle}> 
+                        {''}
+                        Sign in with Google{' '}
+                    </CustomButton>
 
                 </form> 
             </div>
