@@ -13,8 +13,6 @@ import SignInAndSignUpPage from './components/Sign-in-and-sign-up/Sign-in-and-si
 
 // FIREBASE AUTHENTICATION IMPORT
 import { auth } from './firebase/firebase.utils';
-import { render } from 'node-sass';
-
 
 class App extends React.Component{
   constructor() {
