@@ -1,7 +1,9 @@
-// firebase base import
+// BASE IMPORT FOR FIREBASE
 import firebase from 'firebase/app';
 
+// IMPORT DB STORAGE FOR FIREBASE
 import 'firebase/firestore';
+// IMPORT AUTH FOR FIREBASE
 import 'firebase/auth';
 
 const config = {
@@ -15,6 +17,7 @@ const config = {
     measurementId: "G-GVCGBHT7NJ"
 };
 
+// INITIALIZE FIREBASE WITH ABOVE CONFIG OBJECT
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();

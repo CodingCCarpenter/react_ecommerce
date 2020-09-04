@@ -20,9 +20,18 @@ class App extends React.Component{
   constructor() {
     super();
 
-    this.state={
+    this.state = {
       currentUser: null
     }
+  }
+
+  // RUNS WHENEVER AUTHENTICATION STATE CHANGES
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+
+      console.log(user);
+    })
   }
 
   render() {
