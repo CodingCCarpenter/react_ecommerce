@@ -17,6 +17,14 @@ import { render } from 'node-sass';
 
 
 class App extends React.Component{
+  constructor() {
+    super();
+
+    this.state={
+      currentUser: null
+    }
+  }
+
   render() {
     return (
       <div>
