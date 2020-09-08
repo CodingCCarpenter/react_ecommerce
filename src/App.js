@@ -23,13 +23,21 @@ class App extends React.Component{
     }
   }
 
+  // PROPERTY SET ON CLASS TO ALLOW US TO MONITOR WHEN WE CLOSE OUT THE AUTH 
+  unsubscribeFromAuth = null
+
   // RUNS WHENEVER AUTHENTICATION STATE CHANGES
   componentDidMount() {
-    auth.onAuthStateChanged(user => {
+    this.unSubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
-
+      // TO BE DELETED 
       console.log(user);
-    })
+    });
+  }
+
+  // RUNS WHEN COMPONENT PREPARES TO UNMOUNT -UNSUBSCRIBES FROM AUTH
+  componentWillUnmount() {
+    this.unSubscribeFromAuth();
   }
 
   render() {
