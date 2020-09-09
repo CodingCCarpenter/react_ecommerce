@@ -6,7 +6,12 @@
 [] Sass
 [] Google Fonts
 
+## App Functionalities - Front End
+[] A user may sign in using their Google account
+[] A user may sign out
+[] A user may view the store
 
+## App Functionality - Back End
 ## Available Scripts
 
 In the project directory, you can run:
