@@ -59,7 +59,7 @@ class SignIn extends React.Component{
 
                     <CustomButton type='submit' > Sign in </CustomButton>
                     {/*Adds button that triggers our signInWithGoogle pop up window */}
-                    <CustomButton  onClick={signInWithGoogle}> 
+                    <CustomButton  onClick={signInWithGoogle} isGoogleSignIn> 
                         {''}
                         Sign in with Google{' '}
                     </CustomButton>
