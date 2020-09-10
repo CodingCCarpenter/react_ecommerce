@@ -17,6 +17,19 @@ const config = {
     measurementId: "G-GVCGBHT7NJ"
 };
 
+// TAKE USER AUTH OBJECT FROM GOOGLE AND ALLOW US TO STORE IN FIREBASE DB
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    if (!userAuth) return;
+
+    // CREATE A REFERENCE FOR THE USERS DOCUMENT IN FIREBASE
+    const userRef = firestore.doc('users/565435531');
+
+    // CREATE A SNAPSHOT REFERENCE
+    const snapShot = await userRef.get();
+
+    console.log(snapShot)
+};
+
 // INITIALIZE FIREBASE WITH ABOVE CONFIG OBJECT
 firebase.initializeApp(config);
 

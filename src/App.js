@@ -12,7 +12,7 @@ import Header from './components/header/Header.component';
 import SignInAndSignUpPage from './components/Sign-in-and-sign-up/Sign-in-and-sign-up.component';
 
 // FIREBASE AUTHENTICATION IMPORT
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends React.Component{
   constructor() {
@@ -28,8 +28,8 @@ class App extends React.Component{
 
   // RUNS WHENEVER AUTHENTICATION STATE CHANGES
   componentDidMount() {
-    this.unSubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unSubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
       // TO BE DELETED 
       console.log(user);
     });
