@@ -32,8 +32,8 @@ class App extends React.Component{
 
       // EXECUTE CREATEUSERPROFILEDOCUMENT IF LOGGED IN
       if (userAuth) {
-        
-        // AFTER DOCUMENT AND SNAPSHOT REFERENCE ARE CREATE, UPDATE STATE VIA SETSTATE
+
+        // AFTER DOCUMENT AND SNAPSHOT REFERENCE ARE CREATED, UPDATE STATE VIA SETSTATE
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot(snapShot => {
           this.setState({
@@ -43,10 +43,11 @@ class App extends React.Component{
             }
           })
         });
-      }
 
-      // TO BE DELETED 
-      console.log(this.state);
+      // IF USER IS LOGGED OUT, SETSTATE TO USERAUTH
+      } else {
+        this.setState({ currentUser: userAuth });
+      }
     });
   }
 
