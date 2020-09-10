@@ -22,12 +22,30 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
 
     // CREATE A REFERENCE FOR THE USERS DOCUMENT IN FIREBASE
-    const userRef = firestore.doc('users/565435531');
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
 
     // CREATE A SNAPSHOT REFERENCE
     const snapShot = await userRef.get();
 
-    console.log(snapShot)
+    // CHECK IF SNAPSHOT ALREADY EXISTS FOR USER
+    if(!snapShot.exists) {
+        const { displayName, email } = userAuth;
+        const createdAt = new Date();
+
+        // IF USER DOES NOT ALREADY EXIST, CREATE IT
+        try {
+            await userRef.set({
+                displayName,
+                email,
+                createdAt,
+                ...additionalData
+            })
+        } catch(error) {
+            console.log('error creating user', error.message);
+        }
+    }
+
+    return userRef;
 };
 
 // INITIALIZE FIREBASE WITH ABOVE CONFIG OBJECT

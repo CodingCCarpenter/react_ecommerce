@@ -10,6 +10,7 @@
 [] A user may sign in using their Google account
 [] A user may sign out
 [] A user may view the store
+[] Once signed in, user data may be stored
 
 ## App Functionality - Back End
 ## Available Scripts
