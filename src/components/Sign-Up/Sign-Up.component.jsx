@@ -25,6 +25,33 @@ class SignUp extends React.Component {
         }
     }
 
+    handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if(this.password !== this.confirmPassword) {
+            // ALERT AND EXIT PROCESS IF PASSWORDS DO NOT MATCH
+            alert('WARNING!! Passwords do not match');
+            return;
+        }
+
+        try {
+            const { user } = await auth.createUserWithEmailAndPassword(this.email, this.password)
+
+            await createUserProfileDocument(user, this.displayName);
+
+            // CLEARS FORM
+            this.setState({
+                displayName: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    };
+
+
     render() {
         const { displayName, email, password, confirmPassword } = this.state;
         return (
